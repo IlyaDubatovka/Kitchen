@@ -263,6 +263,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682908759}
   m_CullTransparentMesh: 1
+--- !u!4 &769277987 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 186503123, guid: c52c96702e2cda74db354744bbc07ac0, type: 3}
+  m_PrefabInstance: {fileID: 1632732401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &965939889
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d63df18be640a99e896287b668dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waffle: {fileID: 5167037751878698482, guid: 5b63de927760304438a3c6ac347846d5, type: 3}
+  _wafflePosition: {fileID: 769277987}
+  _toasterGO: {fileID: 0}
 --- !u!114 &965939895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +552,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.993
       objectReference: {fileID: 0}
+    - target: {fileID: 2079817551, guid: c52c96702e2cda74db354744bbc07ac0, type: 3}
+      propertyPath: _toastsPosition
+      value: 
+      objectReference: {fileID: 769277987}
     - target: {fileID: 1603108286914157370, guid: c52c96702e2cda74db354744bbc07ac0, type: 3}
       propertyPath: m_Name
       value: Kitchen
