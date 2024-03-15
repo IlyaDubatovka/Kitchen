@@ -4,21 +4,17 @@ using UnityEngine;
 public class Shelf : MonoBehaviour
 {
     // TODO: Вызовите событие ItemSpawned в необходимом месте
-    
+
     public Action ItemSpawned;
     public int ItemsCount { get; private set; }
 
-    [SerializeField]
-    private GameObject[] _items; // Объекты, падающие на полку
-    [SerializeField]
-    private Transform _itemsRoot; // Родительский объект для падающих объектов
-    [SerializeField]
-    private float _spawnInterval; // Интервал между спавном падающих объектов
-    
-    [SerializeField]
-    private Animator _animator;
+    [SerializeField] private GameObject[] _items; // Объекты, падающие на полку
+    [SerializeField] private Transform _itemsRoot; // Родительский объект для падающих объектов
+    [SerializeField] private float _spawnInterval; // Интервал между спавном падающих объектов
+
+    [SerializeField] private Animator _animator;
     private float _timer;
-    
+
     private void Awake()
     {
         InstantiateShelfItem();
@@ -34,6 +30,7 @@ public class Shelf : MonoBehaviour
         {
             InstantiateShelfItem();
             _timer = 0f;
+            ItemSpawned?.Invoke();
         }
     }
 
@@ -44,10 +41,10 @@ public class Shelf : MonoBehaviour
         {
             return;
         }
-        
+
         Instantiate(_items[ItemsCount++], _itemsRoot);
     }
-    
+
     public void Fall()
     {
         // Включаем анимацию падения полки
